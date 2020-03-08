@@ -1,6 +1,12 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # The MIT License (MIT)
+#
+# Copyright (c) 2020 Jun Go
+# All rights reserved
+#
+# This software is a derivative of the original makesite.py.
+# The license text of the original makesite.py is included below.
 #
 # Copyright (c) 2018 Sunaina Pai
 #
@@ -207,21 +213,21 @@ def main():
     blog_posts = make_pages('content/blog/*.md',
                             '_site/blog/{{ slug }}/index.html',
                             post_layout, blog='blog', **params)
-    news_posts = make_pages('content/news/*.html',
-                            '_site/news/{{ slug }}/index.html',
-                            post_layout, blog='news', **params)
+    #news_posts = make_pages('content/news/*.html',
+    #                        '_site/news/{{ slug }}/index.html',
+    #                        post_layout, blog='news', **params)
 
     # Create blog list pages.
     make_list(blog_posts, '_site/blog/index.html',
               list_layout, item_layout, blog='blog', title='Blog', **params)
-    make_list(news_posts, '_site/news/index.html',
-              list_layout, item_layout, blog='news', title='News', **params)
+    #make_list(news_posts, '_site/news/index.html',
+    #          list_layout, item_layout, blog='news', title='News', **params)
 
     # Create RSS feeds.
     make_list(blog_posts, '_site/blog/rss.xml',
               feed_xml, item_xml, blog='blog', title='Blog', **params)
-    make_list(news_posts, '_site/news/rss.xml',
-              feed_xml, item_xml, blog='news', title='News', **params)
+    #make_list(news_posts, '_site/news/rss.xml',
+    #          feed_xml, item_xml, blog='news', title='News', **params)
 
 
 # Test parameter to be set temporarily by unit tests.
