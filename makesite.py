@@ -181,9 +181,9 @@ def main():
     # Default parameters.
     params = {
         'base_path': '',
-        'subtitle': 'Lorem Ipsum',
-        'author': 'Admin',
-        'site_url': 'http://localhost:8000',
+        'subtitle': '',
+        'author': 'Jun Go',
+        'site_url': 'https://eatpeppershothot.xyz',
         'current_year': datetime.datetime.now().year
     }
 
